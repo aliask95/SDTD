@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckboxOption } from "./LayoutSection";
 import { ScanEye, Eraser } from "lucide-react";
 import { useSimulatedRun } from "../hooks/useSimulatedRun";
+import InfoTooltip from "./InfoTooltip";
 
 const FormattingSection = () => {
   const [mepsBookmanWTS, setMepsBookmanWTS] = useState(true);
@@ -12,15 +13,10 @@ const FormattingSection = () => {
     <div className="space-y-3">
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <ScanEye className="w-4 h-4" />
-          Format Helper
+          <ScanEye className="w-[18px] h-[18px]" />
+          <span>Format Helper</span>
+          <InfoTooltip text="Detects formatted text (Italic, Bold, Bold+Italic) in the Source and adds review comments in the Target. Comment author: Format Assist." />
         </div>
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          Detects formatted text (Italic, Bold, Bold+Italic) in the Source document and adds comments in the Target asking if formatting is correct.
-        </p>
-        <p className="text-xs text-muted-foreground mt-1">
-          Comment author: <span className="font-semibold text-foreground">Format Assist</span>
-        </p>
         <button onClick={() => run("Format Helper")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Run Format Helper
         </button>
@@ -28,12 +24,10 @@ const FormattingSection = () => {
 
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <Eraser className="w-4 h-4" />
-          Clean the MEPS Up
+          <Eraser className="w-[18px] h-[18px]" />
+          <span>Clean the MEPS Up</span>
+          <InfoTooltip text="Removes all text with the selected MEPS fonts from the Target document." />
         </div>
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          Removes all text with the selected MEPS fonts from the Target document.
-        </p>
         <div className="space-y-1.5 mt-2">
           <CheckboxOption label="MEPS Bookman WTS" checked={mepsBookmanWTS} onChange={setMepsBookmanWTS} />
           <CheckboxOption label="MEPS Bookman Universal" checked={mepsBookmanUniversal} onChange={setMepsBookmanUniversal} />
