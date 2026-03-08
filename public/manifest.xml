@@ -6,28 +6,20 @@
   xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
   xsi:type="TaskPaneApp">
 
-  <!-- IMPORTANT: Generate a unique GUID at https://guidgenerator.com and replace below -->
-  <Id>a1b2c3d4-e5f6-7890-abcd-ef1234567890</Id>
+  <Id>d7f3a1b9-4c2e-48d0-b6a5-9e8f12c34d56</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>SDTD</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="SDTD - Source to Target Document" />
   <Description DefaultValue="Word add-in for document processing: layout transfer, formatting, and advanced document processing between source and target documents." />
 
-  <!--
-    ============================================================
-    IMPORTANT: Replace YOUR_GITHUB_USERNAME and YOUR_REPO_NAME
-    with your actual GitHub username and repository name.
-    Example: https://johndoe.github.io/sdtd-addin/
-    ============================================================
-  -->
-  <IconUrl DefaultValue="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/assets/sdtd-logo.png" />
-  <HighResolutionIconUrl DefaultValue="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/assets/sdtd-logo.png" />
+  <IconUrl DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
+  <HighResolutionIconUrl DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
 
-  <SupportUrl DefaultValue="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME" />
+  <SupportUrl DefaultValue="https://github.com/aliask95/SDTD" />
 
   <AppDomains>
-    <AppDomain>https://YOUR_GITHUB_USERNAME.github.io</AppDomain>
+    <AppDomain>https://aliask95.github.io</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -35,7 +27,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/" />
+    <SourceLocation DefaultValue="https://aliask95.github.io/SDTD/" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
@@ -86,13 +78,13 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/assets/sdtd-logo.png" />
-        <bt:Image id="Icon.32x32" DefaultValue="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/assets/sdtd-logo.png" />
-        <bt:Image id="Icon.80x80" DefaultValue="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/assets/sdtd-logo.png" />
+        <bt:Image id="Icon.16x16" DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/" />
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://aliask95.github.io/SDTD/" />
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://github.com/aliask95/SDTD" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="SDTD Add-in" />
