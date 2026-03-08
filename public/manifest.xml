@@ -14,7 +14,7 @@
   <Description DefaultValue="Word add-in for document processing: layout transfer, formatting, and advanced document processing between source and target documents." />
 
   <IconUrl DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
-  <HighResolutionIconUrl DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
+  <HighResolutionIconUrl DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
 
   <SupportUrl DefaultValue="https://github.com/aliask95/SDTD" />
 
