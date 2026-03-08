@@ -1,4 +1,5 @@
 import { useState, useCallback, DragEvent } from "react";
+import { ProgressProvider } from "../components/ProgressContext";
 import LayoutSection from "../components/LayoutSection";
 import FormattingSection from "../components/FormattingSection";
 import ADPSection from "../components/ADPSection";
@@ -70,6 +71,7 @@ const Index = () => {
   };
 
   return (
+    <ProgressProvider>
     <div className="min-h-screen flex items-center justify-center p-2 sm:p-4 bg-background">
       <div className="w-full max-w-[400px] max-h-[95vh] overflow-y-auto rounded-xl shadow-2xl flex flex-col border border-border bg-background">
         {/* Header */}
@@ -145,6 +147,7 @@ const Index = () => {
         <BatchProcessing />
       </div>
     </div>
+    </ProgressProvider>
   );
 };
 

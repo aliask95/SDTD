@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { CheckboxOption } from "./LayoutSection";
 import { Replace, MessageSquareShare, SearchCheck } from "lucide-react";
+import { useSimulatedRun } from "../hooks/useSimulatedRun";
 
 const ADPSection = () => {
   const [findId, setFindId] = useState("=E");
@@ -12,8 +13,7 @@ const ADPSection = () => {
   const [excelFile, setExcelFile] = useState<string | null>(
     localStorage.getItem("sdtd_excel_file")
   );
-
-  const stub = (msg: string) => () => toast.info(msg + ": Office.js integration required.");
+  const run = useSimulatedRun();
 
   const handleSelectExcel = () => {
     const name = "dictionary.xlsx";
@@ -30,7 +30,7 @@ const ADPSection = () => {
           Replace Key Phrases
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Uses an Excel dictionary (Column A → Column B) to replace phrases in the Target document. Excluding comments can significantly speed up processing in documents with many comments.
+          Uses an Excel dictionary (Column A → Column B) to replace phrases in the Target document.
         </p>
         <div className="flex items-center gap-2 mt-2">
           <button onClick={handleSelectExcel} className="px-2.5 py-1 text-xs rounded border border-input bg-secondary text-secondary-foreground hover:opacity-80 transition-opacity">
@@ -44,7 +44,7 @@ const ADPSection = () => {
           <CheckboxOption label="Exclude comments from replacement" checked={skipComments} onChange={setSkipComments} />
           <CheckboxOption label="Include header and footer" checked={includeHeaderFooter} onChange={setIncludeHeaderFooter} />
         </div>
-        <button onClick={stub("Replace Key Phrases")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+        <button onClick={() => run("Replace Key Phrases")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Run Replacement
         </button>
       </div>
@@ -55,7 +55,7 @@ const ADPSection = () => {
           Transfer DP Comments
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Copies comments and commented content from author "Digital Publishing" in Source to the corresponding paragraph in Target.
+          Copies comments from author "Digital Publishing" in Source to the corresponding paragraph in Target.
         </p>
         <div className="grid grid-cols-2 gap-2 mt-2">
           <div>
@@ -70,7 +70,7 @@ const ADPSection = () => {
         <div className="mt-2">
           <CheckboxOption label='Exclude comments containing "it"' checked={excludeIt} onChange={setExcludeIt} />
         </div>
-        <button onClick={stub("Transfer Comments")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+        <button onClick={() => run("Transfer Comments")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Transfer Comments
         </button>
       </div>
@@ -83,7 +83,7 @@ const ADPSection = () => {
         <p className="text-xs text-muted-foreground leading-relaxed">
           Compares headings between Source and Target. Reports headings present in Source but missing from Target.
         </p>
-        <button onClick={stub("Detect Missing Sections")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+        <button onClick={() => run("Detect Missing Sections")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Run Detection
         </button>
       </div>
