@@ -25,7 +25,7 @@ const LayoutSection = () => {
     <div className="space-y-3">
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <Copy className="w-3.5 h-3.5" />
+          <Copy className="w-4 h-4" />
           Copy Page Layout
         </div>
         <div className="space-y-1.5">
