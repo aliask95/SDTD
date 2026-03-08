@@ -40,7 +40,7 @@ const FormattingSection = () => {
           <CheckboxOption label="MEPS Bookman Universal" checked={mepsBookmanUniversal} onChange={setMepsBookmanUniversal} />
         </div>
         <button onClick={handleRemoveMeps} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
-          Remove MEPS Markup
+           Remove the MEPS Up
         </button>
       </div>
     </div>
