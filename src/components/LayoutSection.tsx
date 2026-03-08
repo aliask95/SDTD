@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { Copy, PaintBucket } from "lucide-react";
 
 const LayoutSection = () => {
   const [pageSize, setPageSize] = useState(true);
@@ -22,9 +23,11 @@ const LayoutSection = () => {
 
   return (
     <div className="space-y-3">
-      {/* Copy Page Layout */}
       <div className="tool-card">
-        <div className="tool-title">Copy Page Layout</div>
+        <div className="tool-title flex items-center gap-1.5">
+          <Copy className="w-3.5 h-3.5" />
+          Copy Page Layout
+        </div>
         <div className="space-y-1.5">
           <CheckboxOption label="Page Size" checked={pageSize} onChange={setPageSize} />
           <CheckboxOption label="Header" checked={header} onChange={setHeader} />
@@ -41,9 +44,11 @@ const LayoutSection = () => {
         </button>
       </div>
 
-      {/* Copy Styles */}
       <div className="tool-card">
-        <div className="tool-title">Copy Styles</div>
+        <div className="tool-title flex items-center gap-1.5">
+          <PaintBucket className="w-3.5 h-3.5" />
+          Copy Styles
+        </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
           Copy paragraph styles from Source to Target document.
         </p>

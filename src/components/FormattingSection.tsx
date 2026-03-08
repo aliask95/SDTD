@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { CheckboxOption } from "./LayoutSection";
+import { ScanEye, Eraser } from "lucide-react";
 
 const FormattingSection = () => {
   const [mepsBookmanWTS, setMepsBookmanWTS] = useState(true);
@@ -17,7 +18,10 @@ const FormattingSection = () => {
   return (
     <div className="space-y-3">
       <div className="tool-card">
-        <div className="tool-title">Format Helper</div>
+        <div className="tool-title flex items-center gap-1.5">
+          <ScanEye className="w-3.5 h-3.5" />
+          Format Helper
+        </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
           Detects formatted text (Italic, Bold, Bold+Italic) in the Source document and adds comments in the Target asking if formatting is correct.
         </p>
@@ -29,9 +33,11 @@ const FormattingSection = () => {
         </button>
       </div>
 
-      {/* Remove MEPS Markup */}
       <div className="tool-card">
-        <div className="tool-title">Remove the MEPS Up</div>
+        <div className="tool-title flex items-center gap-1.5">
+          <Eraser className="w-3.5 h-3.5" />
+          Remove the MEPS Up
+        </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
           Removes all text with the selected MEPS fonts from the Target document.
         </p>
