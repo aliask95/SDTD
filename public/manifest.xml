@@ -19,7 +19,7 @@
   <SupportUrl DefaultValue="https://sdtd.lovable.app" />
 
   <AppDomains>
-    <AppDomain>https://aliask95.github.io</AppDomain>
+    <AppDomain>https://sdtd.lovable.app</AppDomain>
   </AppDomains>
 
   <Hosts>
