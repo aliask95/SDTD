@@ -57,3 +57,19 @@ const Index = () => {
 };
 
 export default Index;
+
+const DocSelect = ({ label, value, onChange, docs }: { label: string; value: string; onChange: (v: string) => void; docs: string[] }) => (
+  <div>
+    <label className="text-xs font-semibold text-muted-foreground">{label}</label>
+    <select
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="w-full mt-0.5 px-2 py-1.5 text-xs rounded border border-input bg-background text-foreground"
+    >
+      <option value="">— Select —</option>
+      {docs.map((d) => (
+        <option key={d} value={d}>{d}</option>
+      ))}
+    </select>
+  </div>
+);
