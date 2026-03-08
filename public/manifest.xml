@@ -16,7 +16,7 @@
   <IconUrl DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
   <HighResolutionIconUrl DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
 
-  <SupportUrl DefaultValue="https://github.com/aliask95/SDTD" />
+  <SupportUrl DefaultValue="https://sdtd.lovable.app" />
 
   <AppDomains>
     <AppDomain>https://aliask95.github.io</AppDomain>
