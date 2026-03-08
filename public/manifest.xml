@@ -27,7 +27,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://aliask95.github.io/SDTD/" />
+    <SourceLocation DefaultValue="https://sdtd.lovable.app/" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
