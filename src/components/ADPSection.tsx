@@ -84,30 +84,6 @@ const ADPSection = () => {
         </button>
       </div>
 
-      {/* Text Cleanup */}
-      <div className="tool-card">
-        <div className="tool-title">Text Cleanup</div>
-        <div className="space-y-1.5">
-          <CheckboxOption label='Replace "par." and "pars." with "абз."' checked={replacePar} onChange={setReplacePar} />
-          <CheckboxOption label="Replace spaces before numbers with en spaces" checked={replaceSpaces} onChange={setReplaceSpaces} />
-        </div>
-        <button onClick={stub("Text Cleanup")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
-          Run Cleanup
-        </button>
-      </div>
-
-      {/* Document Metadata */}
-      <div className="tool-card">
-        <div className="tool-title">Document Metadata</div>
-        <div className="space-y-1.5">
-          <CheckboxOption label="Clean first paragraph until first Cyrillic character" checked={cleanFirst} onChange={setCleanFirst} />
-          <CheckboxOption label="Convert first paragraph to sentence case" checked={sentenceCase} onChange={setSentenceCase} />
-          <CheckboxOption label="Set as document Title property" checked={setTitle} onChange={setSetTitle} />
-        </div>
-        <button onClick={stub("Apply Metadata")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
-          Apply Metadata
-        </button>
-      </div>
     </div>
   );
 };
