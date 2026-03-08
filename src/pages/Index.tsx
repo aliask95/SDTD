@@ -71,6 +71,7 @@ const Index = () => {
   };
 
   return (
+    <ProgressProvider>
     <div className="min-h-screen flex items-center justify-center p-2 sm:p-4 bg-background">
       <div className="w-full max-w-[400px] max-h-[95vh] overflow-y-auto rounded-xl shadow-2xl flex flex-col border border-border bg-background">
         {/* Header */}
