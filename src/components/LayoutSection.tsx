@@ -7,9 +7,6 @@ const LayoutSection = () => {
   const [footer, setFooter] = useState(true);
   const [copyHeaderFooterContent, setCopyHeaderFooterContent] = useState(false);
 
-  const [paragraphStyles, setParagraphStyles] = useState(true);
-  const [characterStyles, setCharacterStyles] = useState(true);
-  const [updateExisting, setUpdateExisting] = useState(false);
 
   const handleApplyLayout = () => {
     toast.info("Apply Layout: Office.js integration required. This will copy page layout from Source to Target.");
@@ -38,11 +35,9 @@ const LayoutSection = () => {
       {/* Copy Styles */}
       <div className="tool-card">
         <div className="tool-title">Copy Styles</div>
-        <div className="space-y-1.5">
-          <CheckboxOption label="Paragraph Styles" checked={paragraphStyles} onChange={setParagraphStyles} />
-          <CheckboxOption label="Character Styles" checked={characterStyles} onChange={setCharacterStyles} />
-          <CheckboxOption label="Update Existing Styles" checked={updateExisting} onChange={setUpdateExisting} />
-        </div>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          Copy paragraph styles from Source to Target document.
+        </p>
         <button onClick={handleCopyStyles} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Copy Styles
         </button>
