@@ -83,8 +83,8 @@
         <bt:Image id="Icon.80x80" DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://aliask95.github.io/SDTD/" />
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://github.com/aliask95/SDTD" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://sdtd.lovable.app/" />
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://sdtd.lovable.app/" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="SDTD Add-in" />
