@@ -46,7 +46,7 @@ const LayoutSection = () => {
 
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <PaintBucket className="w-3.5 h-3.5" />
+          <PaintBucket className="w-4 h-4" />
           Copy Styles
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">

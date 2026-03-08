@@ -77,7 +77,7 @@ const ADPSection = () => {
 
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <SearchCheck className="w-3.5 h-3.5" />
+          <SearchCheck className="w-4 h-4" />
           Detect Missing Sections
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
