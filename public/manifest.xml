@@ -13,13 +13,13 @@
   <DisplayName DefaultValue="SDTD - Source to Target Document" />
   <Description DefaultValue="Word add-in for document processing: layout transfer, formatting, and advanced document processing between source and target documents." />
 
-  <IconUrl DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
-  <HighResolutionIconUrl DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
+  <IconUrl DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
+  <HighResolutionIconUrl DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
 
-  <SupportUrl DefaultValue="https://sdtd.lovable.app" />
+  <SupportUrl DefaultValue="https://aliask95.github.io/SDTD/" />
 
   <AppDomains>
-    <AppDomain>https://sdtd.lovable.app</AppDomain>
+    <AppDomain>https://aliask95.github.io</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -27,7 +27,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://sdtd.lovable.app/" />
+    <SourceLocation DefaultValue="https://aliask95.github.io/SDTD/" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
@@ -78,13 +78,13 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
-        <bt:Image id="Icon.32x32" DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
-        <bt:Image id="Icon.80x80" DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
+        <bt:Image id="Icon.16x16" DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://sdtd.lovable.app/" />
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://sdtd.lovable.app/" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://aliask95.github.io/SDTD/" />
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://aliask95.github.io/SDTD/" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="SDTD Add-in" />
