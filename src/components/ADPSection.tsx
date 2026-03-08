@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { CheckboxOption } from "./LayoutSection";
 import { Replace, MessageSquareShare, SearchCheck } from "lucide-react";
 import { useSimulatedRun } from "../hooks/useSimulatedRun";
+import InfoTooltip from "./InfoTooltip";
 
 const ADPSection = () => {
   const [findId, setFindId] = useState("=E");
@@ -26,12 +27,10 @@ const ADPSection = () => {
     <div className="space-y-3">
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <Replace className="w-4 h-4" />
-          Replace Key Phrases
+          <Replace className="w-[18px] h-[18px]" />
+          <span>Replace Key Phrases</span>
+          <InfoTooltip text="Uses an Excel dictionary (Column A → Column B) to replace phrases in the Target document. Excluding comments can speed up processing." />
         </div>
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          Uses an Excel dictionary (Column A → Column B) to replace phrases in the Target document.
-        </p>
         <div className="flex items-center gap-2 mt-2">
           <button onClick={handleSelectExcel} className="px-2.5 py-1 text-xs rounded border border-input bg-secondary text-secondary-foreground hover:opacity-80 transition-opacity">
             Select Excel File
@@ -51,12 +50,10 @@ const ADPSection = () => {
 
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <MessageSquareShare className="w-4 h-4" />
-          Transfer DP Comments
+          <MessageSquareShare className="w-[18px] h-[18px]" />
+          <span>Transfer DP Comments</span>
+          <InfoTooltip text='Copies comments and commented content from author "Digital Publishing" in Source to the corresponding paragraph in Target.' />
         </div>
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          Copies comments from author "Digital Publishing" in Source to the corresponding paragraph in Target.
-        </p>
         <div className="grid grid-cols-2 gap-2 mt-2">
           <div>
             <label className="text-xs text-muted-foreground">Find identifier</label>
@@ -77,12 +74,10 @@ const ADPSection = () => {
 
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <SearchCheck className="w-4 h-4" />
-          Detect Missing Sections
+          <SearchCheck className="w-[18px] h-[18px]" />
+          <span>Detect Missing Sections</span>
+          <InfoTooltip text="Compares headings between Source and Target. Reports headings present in Source but missing from Target." />
         </div>
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          Compares headings between Source and Target. Reports headings present in Source but missing from Target.
-        </p>
         <button onClick={() => run("Detect Missing Sections")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Run Detection
         </button>
