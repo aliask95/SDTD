@@ -28,7 +28,7 @@ const ADPSection = () => {
       <div className="tool-card">
         <div className="tool-title">Transfer DP Comments</div>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Copies comments from author "Digital Publishing" in Source to corresponding paragraphs in Target.
+          Copies comments and commented content from author "Digital Publishing" in Source to the corresponding paragraph in Target.
         </p>
         <div className="grid grid-cols-2 gap-2 mt-2">
           <div>
