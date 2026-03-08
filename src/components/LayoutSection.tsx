@@ -6,6 +6,7 @@ const LayoutSection = () => {
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [copyHeaderFooterContent, setCopyHeaderFooterContent] = useState(false);
+  const [deleteEmptyParas, setDeleteEmptyParas] = useState(false);
 
   const handleApplyLayout = () => {
     toast.info("Apply Layout: Office.js integration required. This will copy page layout from Source to Target.");
