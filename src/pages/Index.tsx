@@ -147,6 +147,7 @@ const Index = () => {
         <BatchProcessing />
       </div>
     </div>
+    </ProgressProvider>
   );
 };
 
