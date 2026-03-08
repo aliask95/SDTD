@@ -12,7 +12,6 @@ const ADPSection = () => {
     localStorage.getItem("sdtd_excel_file")
   );
 
-
   const stub = (msg: string) => () => toast.info(msg + ": Office.js integration required.");
 
   const handleSelectExcel = () => {
@@ -24,6 +23,29 @@ const ADPSection = () => {
 
   return (
     <div className="space-y-3">
+      {/* Replace Key Phrases */}
+      <div className="tool-card">
+        <div className="tool-title">Replace Key Phrases</div>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          Uses an Excel dictionary (Column A → Column B) to replace phrases in the Target document. Excluding comments can significantly speed up processing in documents with many comments.
+        </p>
+        <div className="flex items-center gap-2 mt-2">
+          <button onClick={handleSelectExcel} className="px-2.5 py-1 text-xs rounded border border-input bg-secondary text-secondary-foreground hover:opacity-80 transition-opacity">
+            Select Excel File
+          </button>
+          <span className="text-xs text-muted-foreground truncate">
+            {excelFile || "No file selected"}
+          </span>
+        </div>
+        <div className="mt-2 space-y-1.5">
+          <CheckboxOption label="Exclude comments from replacement" checked={skipComments} onChange={setSkipComments} />
+          <CheckboxOption label="Include header and footer" checked={includeHeaderFooter} onChange={setIncludeHeaderFooter} />
+        </div>
+        <button onClick={stub("Replace Key Phrases")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+          Run Replacement
+        </button>
+      </div>
+
       {/* Transfer DP Comments */}
       <div className="tool-card">
         <div className="tool-title">Transfer DP Comments</div>
@@ -58,30 +80,6 @@ const ADPSection = () => {
           Run Detection
         </button>
       </div>
-
-      {/* Replace Key Phrases */}
-      <div className="tool-card">
-        <div className="tool-title">Replace Key Phrases</div>
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          Uses an Excel dictionary (Column A → Column B) to replace phrases in the Target document. Excluding comments can significantly speed up processing in documents with many comments.
-        </p>
-        <div className="flex items-center gap-2 mt-2">
-          <button onClick={handleSelectExcel} className="px-2.5 py-1 text-xs rounded border border-input bg-secondary text-secondary-foreground hover:opacity-80 transition-opacity">
-            Select Excel File
-          </button>
-          <span className="text-xs text-muted-foreground truncate">
-            {excelFile || "No file selected"}
-          </span>
-        </div>
-        <div className="mt-2 space-y-1.5">
-          <CheckboxOption label="Exclude comments from replacement" checked={skipComments} onChange={setSkipComments} />
-          <CheckboxOption label="Include header and footer" checked={includeHeaderFooter} onChange={setIncludeHeaderFooter} />
-        </div>
-        <button onClick={stub("Replace Key Phrases")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
-          Run Replacement
-        </button>
-      </div>
-
     </div>
   );
 };
