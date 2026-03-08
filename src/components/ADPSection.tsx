@@ -6,6 +6,7 @@ const ADPSection = () => {
   const [findId, setFindId] = useState("=E");
   const [replaceWith, setReplaceWith] = useState("=BL");
   const [excludeIt, setExcludeIt] = useState(false);
+  const [skipComments, setSkipComments] = useState(false);
   const [excelFile, setExcelFile] = useState<string | null>(
     localStorage.getItem("sdtd_excel_file")
   );
