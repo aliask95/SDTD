@@ -128,7 +128,7 @@ const Index = () => {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <Icon className="w-4 h-4" />
+              <Icon className="w-[18px] h-[18px]" />
               <span>{label}</span>
               {activeTab === id && (
                 <span className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full bg-primary" />
