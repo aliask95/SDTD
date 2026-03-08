@@ -1,19 +1,12 @@
 import { useState } from "react";
-import { toast } from "sonner";
 import { CheckboxOption } from "./LayoutSection";
 import { ScanEye, Eraser } from "lucide-react";
+import { useSimulatedRun } from "../hooks/useSimulatedRun";
 
 const FormattingSection = () => {
   const [mepsBookmanWTS, setMepsBookmanWTS] = useState(true);
   const [mepsBookmanUniversal, setMepsBookmanUniversal] = useState(true);
-
-  const handleRunFormatHelper = () => {
-    toast.info("Format Helper: Office.js integration required. Will detect Bold/Italic/Bold+Italic and add review comments.");
-  };
-
-  const handleRemoveMeps = () => {
-    toast.info("Clean the MEPS Up: Office.js integration required. Will remove text with selected MEPS fonts.");
-  };
+  const run = useSimulatedRun();
 
   return (
     <div className="space-y-3">
@@ -28,7 +21,7 @@ const FormattingSection = () => {
         <p className="text-xs text-muted-foreground mt-1">
           Comment author: <span className="font-semibold text-foreground">Format Assist</span>
         </p>
-        <button onClick={handleRunFormatHelper} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+        <button onClick={() => run("Format Helper")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Run Format Helper
         </button>
       </div>
@@ -45,7 +38,7 @@ const FormattingSection = () => {
           <CheckboxOption label="MEPS Bookman WTS" checked={mepsBookmanWTS} onChange={setMepsBookmanWTS} />
           <CheckboxOption label="MEPS Bookman Universal" checked={mepsBookmanUniversal} onChange={setMepsBookmanUniversal} />
         </div>
-        <button onClick={handleRemoveMeps} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+        <button onClick={() => run("Clean the MEPS Up")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
            Clean the MEPS Up
         </button>
       </div>
