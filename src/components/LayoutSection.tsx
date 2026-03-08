@@ -29,6 +29,11 @@ const LayoutSection = () => {
           <CheckboxOption label="Header" checked={header} onChange={setHeader} />
           <CheckboxOption label="Footer" checked={footer} onChange={setFooter} />
           <CheckboxOption label="Copy Header/Footer Content" checked={copyHeaderFooterContent} onChange={setCopyHeaderFooterContent} />
+          {copyHeaderFooterContent && (
+            <div className="ml-5">
+              <CheckboxOption label="Delete empty paragraphs in header/footer" checked={deleteEmptyParas} onChange={setDeleteEmptyParas} />
+            </div>
+          )}
         </div>
         <button onClick={handleApplyLayout} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Apply Layout
@@ -43,17 +48,6 @@ const LayoutSection = () => {
         </p>
         <button onClick={handleCopyStyles} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Copy Styles
-        </button>
-      </div>
-
-      {/* Delete Empty Paragraphs in Header/Footer */}
-      <div className="tool-card">
-        <div className="tool-title">Delete Empty Paragraphs</div>
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          Deletes empty paragraphs in header and footer of the Target document.
-        </p>
-        <button onClick={handleDeleteEmptyParagraphs} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
-          Delete Empty Paragraphs
         </button>
       </div>
     </div>
