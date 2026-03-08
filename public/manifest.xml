@@ -7,7 +7,7 @@
   xsi:type="TaskPaneApp">
 
   <Id>d7f3a1b9-4c2e-48d0-b6a5-9e8f12c34d56</Id>
-  <Version>1.0.0.0</Version>
+  <Version>1.0.0.1</Version>
   <ProviderName>SDTD</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="SDTD - Source to Target Document" />
