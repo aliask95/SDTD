@@ -1,28 +1,31 @@
 import { useState, useCallback, DragEvent } from "react";
-import CollapsibleSection from "../components/CollapsibleSection";
 import LayoutSection from "../components/LayoutSection";
 import FormattingSection from "../components/FormattingSection";
 import ADPSection from "../components/ADPSection";
 import BatchProcessing from "../components/BatchProcessing";
 import { toast } from "sonner";
-import { FolderOpen } from "lucide-react";
+import { FolderOpen, LayoutTemplate, Type, Cpu } from "lucide-react";
 import sdtdLogo from "@/assets/sdtd-logo.png";
 
 const MOCK_DOCS = ["Document1.docx", "Report_EN.docx", "Translation_RU.docx"];
 
+const TABS = [
+  { id: "layout", label: "Layout", icon: LayoutTemplate },
+  { id: "format", label: "Format", icon: Type },
+  { id: "adp", label: "ADP", icon: Cpu },
+] as const;
+
+type TabId = (typeof TABS)[number]["id"];
+
 const Index = () => {
   const [sourceDoc, setSourceDoc] = useState("");
   const [targetDoc, setTargetDoc] = useState("");
-  const [openSection, setOpenSection] = useState<string | null>("1");
+  const [activeTab, setActiveTab] = useState<TabId>("layout");
   const [sourceDrag, setSourceDrag] = useState(false);
   const [targetDrag, setTargetDrag] = useState(false);
 
   const handleCheckParagraphCount = () => {
     toast.info("Check Paragraph Count: Office.js integration required.");
-  };
-
-  const handleToggle = (id: string) => {
-    setOpenSection((prev) => (prev === id ? null : id));
   };
 
   const handleFilePick = (setter: (v: string) => void) => {
@@ -111,17 +114,32 @@ const Index = () => {
           </button>
         </div>
 
-        {/* Sections */}
-        <div className="flex-1 overflow-y-auto">
-          <CollapsibleSection title="1. Layout" isOpen={openSection === "1"} onToggle={() => handleToggle("1")}>
-            <LayoutSection />
-          </CollapsibleSection>
-          <CollapsibleSection title="2. Formatting" isOpen={openSection === "2"} onToggle={() => handleToggle("2")}>
-            <FormattingSection />
-          </CollapsibleSection>
-          <CollapsibleSection title="3. ADP (Advanced Document Processing)" isOpen={openSection === "3"} onToggle={() => handleToggle("3")}>
-            <ADPSection />
-          </CollapsibleSection>
+        {/* Tab Bar */}
+        <div className="flex border-b border-border bg-card">
+          {TABS.map(({ id, label, icon: Icon }) => (
+            <button
+              key={id}
+              onClick={() => setActiveTab(id)}
+              className={`flex-1 flex items-center justify-center gap-1.5 px-2 py-2.5 text-xs font-semibold transition-all relative ${
+                activeTab === id
+                  ? "text-accent-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Icon className="w-3.5 h-3.5" />
+              <span>{label}</span>
+              {activeTab === id && (
+                <span className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full bg-primary" />
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Tab Content */}
+        <div className="flex-1 overflow-y-auto px-3 py-2.5" style={{ background: "hsl(200 12% 14%)" }}>
+          {activeTab === "layout" && <LayoutSection />}
+          {activeTab === "format" && <FormattingSection />}
+          {activeTab === "adp" && <ADPSection />}
         </div>
 
         <BatchProcessing />
