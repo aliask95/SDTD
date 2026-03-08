@@ -7,19 +7,19 @@
   xsi:type="TaskPaneApp">
 
   <Id>d7f3a1b9-4c2e-48d0-b6a5-9e8f12c34d56</Id>
-  <Version>1.0.0.1</Version>
+  <Version>1.0.0.2</Version>
   <ProviderName>SDTD</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="SDTD - Source to Target Document" />
   <Description DefaultValue="Word add-in for document processing: layout transfer, formatting, and advanced document processing between source and target documents." />
 
-  <IconUrl DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
-  <HighResolutionIconUrl DefaultValue="https://aliask95.github.io/SDTD/assets/sdtd-logo.png" />
+  <IconUrl DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
+  <HighResolutionIconUrl DefaultValue="https://sdtd.lovable.app/assets/sdtd-logo.png" />
 
-  <SupportUrl DefaultValue="https://aliask95.github.io/SDTD/" />
+  <SupportUrl DefaultValue="https://sdtd.lovable.app/" />
 
   <AppDomains>
-    <AppDomain>https://aliask95.github.io</AppDomain>
+    <AppDomain>https://sdtd.lovable.app</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -27,7 +27,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://aliask95.github.io/SDTD/" />
+    <SourceLocation DefaultValue="https://sdtd.lovable.app/" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
