@@ -24,7 +24,7 @@ const InfoTooltip = ({ text }: { text: string }) => {
         <Info className="w-3.5 h-3.5" />
       </button>
       {open && (
-        <div className="absolute left-0 top-full mt-1 z-50 w-56 p-2 text-[11px] leading-relaxed normal-case tracking-normal font-normal text-foreground rounded-md border border-border bg-card shadow-lg">
+        <div className="fixed inset-x-0 mx-3 z-50 p-2.5 text-[11px] leading-relaxed normal-case tracking-normal font-normal text-foreground rounded-md border border-border bg-card shadow-lg" style={{ top: ref.current?.getBoundingClientRect().bottom ?? 0 + 4 }}>
           {text}
         </div>
       )}
