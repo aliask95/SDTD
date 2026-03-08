@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { CheckboxOption } from "./LayoutSection";
+import { Replace, MessageSquareShare, SearchCheck } from "lucide-react";
 
 const ADPSection = () => {
   const [findId, setFindId] = useState("=E");
@@ -23,9 +24,11 @@ const ADPSection = () => {
 
   return (
     <div className="space-y-3">
-      {/* Replace Key Phrases */}
       <div className="tool-card">
-        <div className="tool-title">Replace Key Phrases</div>
+        <div className="tool-title flex items-center gap-1.5">
+          <Replace className="w-3.5 h-3.5" />
+          Replace Key Phrases
+        </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
           Uses an Excel dictionary (Column A → Column B) to replace phrases in the Target document. Excluding comments can significantly speed up processing in documents with many comments.
         </p>
@@ -46,9 +49,11 @@ const ADPSection = () => {
         </button>
       </div>
 
-      {/* Transfer DP Comments */}
       <div className="tool-card">
-        <div className="tool-title">Transfer DP Comments</div>
+        <div className="tool-title flex items-center gap-1.5">
+          <MessageSquareShare className="w-3.5 h-3.5" />
+          Transfer DP Comments
+        </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
           Copies comments and commented content from author "Digital Publishing" in Source to the corresponding paragraph in Target.
         </p>
@@ -70,9 +75,11 @@ const ADPSection = () => {
         </button>
       </div>
 
-      {/* Detect Missing Sections */}
       <div className="tool-card">
-        <div className="tool-title">Detect Missing Sections</div>
+        <div className="tool-title flex items-center gap-1.5">
+          <SearchCheck className="w-3.5 h-3.5" />
+          Detect Missing Sections
+        </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
           Compares headings between Source and Target. Reports headings present in Source but missing from Target.
         </p>
