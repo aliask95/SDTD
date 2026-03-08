@@ -26,7 +26,7 @@ const ADPSection = () => {
     <div className="space-y-3">
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <Replace className="w-3.5 h-3.5" />
+          <Replace className="w-4 h-4" />
           Replace Key Phrases
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
@@ -51,7 +51,7 @@ const ADPSection = () => {
 
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <MessageSquareShare className="w-3.5 h-3.5" />
+          <MessageSquareShare className="w-4 h-4" />
           Transfer DP Comments
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
@@ -77,7 +77,7 @@ const ADPSection = () => {
 
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <SearchCheck className="w-3.5 h-3.5" />
+          <SearchCheck className="w-4 h-4" />
           Detect Missing Sections
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">

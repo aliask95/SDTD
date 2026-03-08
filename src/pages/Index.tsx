@@ -73,18 +73,18 @@ const Index = () => {
     <div className="min-h-screen flex items-center justify-center p-2 sm:p-4 bg-background">
       <div className="w-full max-w-[400px] max-h-[95vh] overflow-y-auto rounded-xl shadow-2xl flex flex-col border border-border bg-background">
         {/* Header */}
-        <div className="flex items-center gap-3 px-4 py-3 rounded-t-xl" style={{ background: "linear-gradient(135deg, hsl(190 79% 35%), hsl(190 79% 28%))" }}>
-          <img src={sdtdLogo} alt="SDTD Logo" className="w-9 h-9 rounded-lg shadow-md" />
+        <div className="flex items-center gap-3 px-4 py-2.5 rounded-t-xl" style={{ background: "linear-gradient(135deg, hsl(190 79% 35%), hsl(190 79% 28%))" }}>
+          <img src={sdtdLogo} alt="SDTD Logo" className="w-8 h-8 rounded-lg shadow-md" />
           <div className="flex flex-col">
             <span className="text-sm font-bold tracking-wider leading-tight text-primary-foreground">SDTD</span>
             <span className="text-[10px] text-primary-foreground/60 leading-tight font-medium">Source → Target Document</span>
           </div>
         </div>
 
-        {/* Document Selectors */}
-        <div className="px-3 py-3 space-y-2 border-b border-border">
+        {/* Document Selectors — compact */}
+        <div className="px-3 py-2 space-y-1.5 border-b border-border">
           <DocSelect
-            label="Source Document"
+            label="Source"
             value={sourceDoc}
             onChange={setSourceDoc}
             docs={MOCK_DOCS}
@@ -95,7 +95,7 @@ const Index = () => {
             onDragLeave={handleDragLeave(setSourceDrag)}
           />
           <DocSelect
-            label="Target Document"
+            label="Target"
             value={targetDoc}
             onChange={setTargetDoc}
             docs={MOCK_DOCS}
@@ -107,7 +107,7 @@ const Index = () => {
           />
           <button
             onClick={handleCheckParagraphCount}
-            className="w-full px-3 py-2 text-xs font-bold rounded-md transition-all uppercase tracking-wider hover:brightness-110 bg-primary text-primary-foreground"
+            className="w-full px-3 py-1.5 text-[11px] font-bold rounded-md transition-all uppercase tracking-wider hover:brightness-110 bg-primary text-primary-foreground"
             style={{ boxShadow: "0 2px 8px hsl(190 79% 39% / 0.3)" }}
           >
             Check Paragraph Count
@@ -120,13 +120,13 @@ const Index = () => {
             <button
               key={id}
               onClick={() => setActiveTab(id)}
-              className={`flex-1 flex items-center justify-center gap-1.5 px-2 py-2.5 text-xs font-semibold transition-all relative ${
+              className={`flex-1 flex items-center justify-center gap-1.5 px-2 py-2.5 text-[11px] font-semibold transition-all relative ${
                 activeTab === id
                   ? "text-accent-foreground"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <Icon className="w-3.5 h-3.5" />
+              <Icon className="w-4 h-4" />
               <span>{label}</span>
               {activeTab === id && (
                 <span className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full bg-primary" />
@@ -164,19 +164,19 @@ interface DocSelectProps {
 
 const DocSelect = ({ label, value, onChange, docs, onBrowse, isDragging, onDrop, onDragOver, onDragLeave }: DocSelectProps) => (
   <div
-    className={`rounded-md p-2 transition-all ${isDragging ? "ring-2 ring-primary bg-accent" : ""}`}
+    className={`rounded p-1.5 transition-all ${isDragging ? "ring-2 ring-primary bg-accent" : ""}`}
     onDrop={onDrop as any}
     onDragOver={onDragOver as any}
     onDragLeave={onDragLeave}
   >
-    <label className="text-[10px] font-bold uppercase tracking-wider text-accent-foreground">{label}</label>
-    <div className="flex items-center gap-1.5 mt-0.5">
+    <div className="flex items-center gap-1.5">
+      <label className="text-[10px] font-bold uppercase tracking-wider text-accent-foreground w-12 shrink-0">{label}</label>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="flex-1 min-w-0 px-2 py-1.5 text-xs rounded bg-secondary border border-input text-secondary-foreground"
+        className="flex-1 min-w-0 px-2 py-1 text-xs rounded bg-secondary border border-input text-secondary-foreground"
       >
-        <option value="">— Select or drop file —</option>
+        <option value="">— Select or drop —</option>
         {docs.map((d) => (
           <option key={d} value={d}>{d}</option>
         ))}
@@ -184,7 +184,7 @@ const DocSelect = ({ label, value, onChange, docs, onBrowse, isDragging, onDrop,
       </select>
       <button
         onClick={onBrowse}
-        className="shrink-0 p-1.5 rounded-md bg-secondary border border-input text-secondary-foreground hover:bg-muted transition-colors"
+        className="shrink-0 p-1 rounded bg-secondary border border-input text-secondary-foreground hover:bg-muted transition-colors"
         title="Browse for file"
       >
         <FolderOpen className="w-3.5 h-3.5" />

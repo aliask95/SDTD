@@ -12,14 +12,14 @@ const FormattingSection = () => {
   };
 
   const handleRemoveMeps = () => {
-    toast.info("Remove MEPS Markup: Office.js integration required. Will remove text with selected MEPS fonts.");
+    toast.info("Clean the MEPS Up: Office.js integration required. Will remove text with selected MEPS fonts.");
   };
 
   return (
     <div className="space-y-3">
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <ScanEye className="w-3.5 h-3.5" />
+          <ScanEye className="w-4 h-4" />
           Format Helper
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
@@ -35,8 +35,8 @@ const FormattingSection = () => {
 
       <div className="tool-card">
         <div className="tool-title flex items-center gap-1.5">
-          <Eraser className="w-3.5 h-3.5" />
-          Remove the MEPS Up
+          <Eraser className="w-4 h-4" />
+          Clean the MEPS Up
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
           Removes all text with the selected MEPS fonts from the Target document.
@@ -46,7 +46,7 @@ const FormattingSection = () => {
           <CheckboxOption label="MEPS Bookman Universal" checked={mepsBookmanUniversal} onChange={setMepsBookmanUniversal} />
         </div>
         <button onClick={handleRemoveMeps} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
-           Remove the MEPS Up
+           Clean the MEPS Up
         </button>
       </div>
     </div>
