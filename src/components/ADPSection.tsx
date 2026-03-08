@@ -73,8 +73,9 @@ const ADPSection = () => {
             {excelFile || "No file selected"}
           </span>
         </div>
-        <div className="mt-2">
+        <div className="mt-2 space-y-1.5">
           <CheckboxOption label="Exclude comments from replacement" checked={skipComments} onChange={setSkipComments} />
+          <CheckboxOption label="Include header and footer" checked={includeHeaderFooter} onChange={setIncludeHeaderFooter} />
         </div>
         <button onClick={stub("Replace Key Phrases")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Run Replacement

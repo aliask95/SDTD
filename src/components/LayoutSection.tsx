@@ -7,13 +7,16 @@ const LayoutSection = () => {
   const [footer, setFooter] = useState(true);
   const [copyHeaderFooterContent, setCopyHeaderFooterContent] = useState(false);
 
-
   const handleApplyLayout = () => {
     toast.info("Apply Layout: Office.js integration required. This will copy page layout from Source to Target.");
   };
 
   const handleCopyStyles = () => {
     toast.info("Copy Styles: Office.js integration required. This will copy styles from Source to Target.");
+  };
+
+  const handleDeleteEmptyParagraphs = () => {
+    toast.info("Delete Empty Paragraphs: Office.js integration required. Will remove empty paragraphs in header and footer.");
   };
 
   return (
@@ -40,6 +43,17 @@ const LayoutSection = () => {
         </p>
         <button onClick={handleCopyStyles} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Copy Styles
+        </button>
+      </div>
+
+      {/* Delete Empty Paragraphs in Header/Footer */}
+      <div className="tool-card">
+        <div className="tool-title">Delete Empty Paragraphs</div>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          Deletes empty paragraphs in header and footer of the Target document.
+        </p>
+        <button onClick={handleDeleteEmptyParagraphs} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+          Delete Empty Paragraphs
         </button>
       </div>
     </div>

@@ -5,12 +5,17 @@ import FormattingSection from "../components/FormattingSection";
 import ADPSection from "../components/ADPSection";
 import BatchProcessing from "../components/BatchProcessing";
 import { FileText } from "lucide-react";
+import { toast } from "sonner";
 
 const MOCK_DOCS = ["Document1.docx", "Report_EN.docx", "Translation_RU.docx"];
 
 const Index = () => {
   const [sourceDoc, setSourceDoc] = useState("");
   const [targetDoc, setTargetDoc] = useState("");
+
+  const handleCheckParagraphCount = () => {
+    toast.info("Check Paragraph Count: Office.js integration required. Will compare paragraph counts between Source and Target.");
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-muted/50 p-4">
@@ -26,6 +31,9 @@ const Index = () => {
         <div className="px-3 py-2.5 space-y-2 border-b border-border">
           <DocSelect label="Source Document" value={sourceDoc} onChange={setSourceDoc} docs={MOCK_DOCS} />
           <DocSelect label="Target Document" value={targetDoc} onChange={setTargetDoc} docs={MOCK_DOCS} />
+          <button onClick={handleCheckParagraphCount} className="w-full px-3 py-1.5 text-xs font-semibold rounded bg-secondary text-secondary-foreground border border-input hover:opacity-80 transition-opacity">
+            Check Paragraph Count
+          </button>
         </div>
 
         {/* Sections */}
@@ -47,21 +55,5 @@ const Index = () => {
     </div>
   );
 };
-
-const DocSelect = ({ label, value, onChange, docs }: { label: string; value: string; onChange: (v: string) => void; docs: string[] }) => (
-  <div>
-    <label className="text-xs font-semibold text-muted-foreground">{label}</label>
-    <select
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      className="w-full mt-0.5 px-2 py-1.5 text-xs rounded border border-input bg-background text-foreground"
-    >
-      <option value="">— Select —</option>
-      {docs.map((d) => (
-        <option key={d} value={d}>{d}</option>
-      ))}
-    </select>
-  </div>
-);
 
 export default Index;
