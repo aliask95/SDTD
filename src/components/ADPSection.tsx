@@ -10,14 +10,6 @@ const ADPSection = () => {
     localStorage.getItem("sdtd_excel_file")
   );
 
-  // Text Cleanup
-  const [replacePar, setReplacePar] = useState(true);
-  const [replaceSpaces, setReplaceSpaces] = useState(true);
-
-  // Metadata
-  const [cleanFirst, setCleanFirst] = useState(true);
-  const [sentenceCase, setSentenceCase] = useState(true);
-  const [setTitle, setSetTitle] = useState(true);
 
   const stub = (msg: string) => () => toast.info(msg + ": Office.js integration required.");
 
