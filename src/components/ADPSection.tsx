@@ -7,6 +7,7 @@ const ADPSection = () => {
   const [replaceWith, setReplaceWith] = useState("=BL");
   const [excludeIt, setExcludeIt] = useState(false);
   const [skipComments, setSkipComments] = useState(false);
+  const [includeHeaderFooter, setIncludeHeaderFooter] = useState(false);
   const [excelFile, setExcelFile] = useState<string | null>(
     localStorage.getItem("sdtd_excel_file")
   );
@@ -27,7 +28,7 @@ const ADPSection = () => {
       <div className="tool-card">
         <div className="tool-title">Transfer DP Comments</div>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Copies comments from author "Digital Publishing" in Source to corresponding paragraphs in Target.
+          Copies comments and commented content from author "Digital Publishing" in Source to the corresponding paragraph in Target.
         </p>
         <div className="grid grid-cols-2 gap-2 mt-2">
           <div>
@@ -72,8 +73,9 @@ const ADPSection = () => {
             {excelFile || "No file selected"}
           </span>
         </div>
-        <div className="mt-2">
+        <div className="mt-2 space-y-1.5">
           <CheckboxOption label="Exclude comments from replacement" checked={skipComments} onChange={setSkipComments} />
+          <CheckboxOption label="Include header and footer" checked={includeHeaderFooter} onChange={setIncludeHeaderFooter} />
         </div>
         <button onClick={stub("Replace Key Phrases")} className="w-full mt-2 px-3 py-1.5 text-xs font-semibold rounded bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
           Run Replacement
