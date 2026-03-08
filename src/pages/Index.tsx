@@ -6,6 +6,7 @@ import ADPSection from "../components/ADPSection";
 import BatchProcessing from "../components/BatchProcessing";
 import { toast } from "sonner";
 import sdtdLogo from "@/assets/sdtd-logo.png";
+import { Link } from "react-router-dom";
 
 const MOCK_DOCS = ["Document1.docx", "Report_EN.docx", "Translation_RU.docx"];
 
