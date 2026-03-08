@@ -4,8 +4,8 @@ import LayoutSection from "../components/LayoutSection";
 import FormattingSection from "../components/FormattingSection";
 import ADPSection from "../components/ADPSection";
 import BatchProcessing from "../components/BatchProcessing";
-import { FileText } from "lucide-react";
 import { toast } from "sonner";
+import sdtdLogo from "@/assets/sdtd-logo.png";
 
 const MOCK_DOCS = ["Document1.docx", "Report_EN.docx", "Translation_RU.docx"];
 
