@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui"
+          onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab id="sdtdTab" label="SDTD">
+
+        <!-- Document Selection Group -->
+        <group id="grpDocs" label="Documents">
+          <dropDown id="ddSource" label="Source:" getItemCount="GetSourceCount"
+                    getItemLabel="GetSourceLabel" onAction="OnSourceSelect"
+                    sizeString="WWWWWWWWWWWWWWWWWWWW"/>
+          <dropDown id="ddTarget" label="Target:" getItemCount="GetTargetCount"
+                    getItemLabel="GetTargetLabel" onAction="OnTargetSelect"
+                    sizeString="WWWWWWWWWWWWWWWWWWWW"/>
+          <button id="btnRefresh" label="Refresh" imageMso="Refresh"
+                  onAction="OnRefreshDocs" size="normal"/>
+          <button id="btnCheckParas" label="Check ¶ Count" imageMso="NumberInsert"
+                  onAction="OnCheckParagraphCount" size="normal"/>
+        </group>
+
+        <!-- Layout Group -->
+        <group id="grpLayout" label="Layout">
+          <checkBox id="chkPageSize" label="Page Size" getPressed="GetChkPageSize"
+                    onAction="OnChkPageSize"/>
+          <checkBox id="chkHeader" label="Header" getPressed="GetChkHeader"
+                    onAction="OnChkHeader"/>
+          <checkBox id="chkFooter" label="Footer" getPressed="GetChkFooter"
+                    onAction="OnChkFooter"/>
+          <checkBox id="chkHFContent" label="Copy H/F Content" getPressed="GetChkHFContent"
+                    onAction="OnChkHFContent"/>
+          <checkBox id="chkDelEmptyParas" label="Del Empty ¶ in H/F" getPressed="GetChkDelEmpty"
+                    onAction="OnChkDelEmpty"/>
+          <button id="btnApplyLayout" label="Apply Layout" imageMso="PageSetupDialog"
+                  onAction="OnApplyLayout" size="large"/>
+          <button id="btnCopyStyles" label="Copy Styles" imageMso="StylesPane"
+                  onAction="OnCopyStyles" size="large"/>
+        </group>
+
+        <!-- Formatting Group -->
+        <group id="grpFormat" label="Formatting">
+          <button id="btnFormatHelper" label="Format Helper" imageMso="ReviewTrackChanges"
+                  onAction="OnFormatHelper" size="large"/>
+          <checkBox id="chkMepsBWTS" label="MEPS Bookman WTS" getPressed="GetChkMepsBWTS"
+                    onAction="OnChkMepsBWTS"/>
+          <checkBox id="chkMepsBUniv" label="MEPS Bookman Universal" getPressed="GetChkMepsBUniv"
+                    onAction="OnChkMepsBUniv"/>
+          <button id="btnCleanMeps" label="Clean MEPS Up" imageMso="ClearFormatting"
+                  onAction="OnCleanMeps" size="large"/>
+        </group>
+
+        <!-- ADP Group -->
+        <group id="grpADP" label="ADP">
+          <button id="btnSelectExcel" label="Select Excel" imageMso="ImportExcel"
+                  onAction="OnSelectExcel" size="normal"/>
+          <checkBox id="chkSkipComments" label="Skip Comments" getPressed="GetChkSkipComments"
+                    onAction="OnChkSkipComments"/>
+          <checkBox id="chkIncludeHF" label="Include H/F" getPressed="GetChkIncludeHF"
+                    onAction="OnChkIncludeHF"/>
+          <button id="btnReplace" label="Replace Phrases" imageMso="ReplaceDialog"
+                  onAction="OnReplaceKeyPhrases" size="large"/>
+          <separator id="sep1"/>
+          <editBox id="txtFindId" label="Find ID:" getText="GetFindId"
+                   onChange="OnFindIdChange" sizeString="WWWWWW"/>
+          <editBox id="txtReplaceWith" label="Replace:" getText="GetReplaceWith"
+                   onChange="OnReplaceWithChange" sizeString="WWWWWW"/>
+          <checkBox id="chkExcludeIt" label="Exclude 'it'" getPressed="GetChkExcludeIt"
+                    onAction="OnChkExcludeIt"/>
+          <button id="btnTransferComments" label="Transfer DP Comments" imageMso="CommentInsert"
+                  onAction="OnTransferComments" size="large"/>
+          <separator id="sep2"/>
+          <button id="btnDetectMissing" label="Detect Missing" imageMso="FindDialog"
+                  onAction="OnDetectMissing" size="large"/>
+        </group>
+
+        <!-- Batch Group -->
+        <group id="grpBatch" label="Batch">
+          <checkBox id="chkBatch" label="Batch Mode" getPressed="GetChkBatch"
+                    onAction="OnChkBatch"/>
+          <button id="btnBatchFiles" label="Select Files" imageMso="FileSaveAsWordOpenXml"
+                  onAction="OnBatchSelectFiles" size="normal"/>
+          <button id="btnBatchFolder" label="Select Folder" imageMso="FileOpen"
+                  onAction="OnBatchSelectFolder" size="normal"/>
+        </group>
+
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
