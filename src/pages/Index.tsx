@@ -21,10 +21,12 @@ const Index = () => {
     <div className="min-h-screen flex items-center justify-center bg-muted/50 p-4">
       <div className="w-[360px] max-h-[90vh] overflow-y-auto rounded-lg shadow-lg border border-border bg-background flex flex-col">
         {/* Header */}
-        <div className="flex items-center gap-2 px-3 py-2.5 border-b border-border bg-primary text-primary-foreground">
-          <FileText className="w-4 h-4" />
-          <span className="text-sm font-bold tracking-wide">SDTD</span>
-          <span className="text-xs opacity-80 ml-1">Source → Target</span>
+        <div className="flex items-center gap-2.5 px-3 py-2 border-b border-border bg-primary text-primary-foreground">
+          <img src={sdtdLogo} alt="SDTD Logo" className="w-7 h-7 rounded" />
+          <div className="flex flex-col">
+            <span className="text-sm font-bold tracking-wide leading-tight">SDTD</span>
+            <span className="text-[10px] opacity-80 leading-tight">Source → Target Document</span>
+          </div>
         </div>
 
         {/* Document Selectors */}
