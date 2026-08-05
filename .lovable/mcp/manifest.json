@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://oxuniijwmbapbftrdjfo.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "sdtd",
+      "version": "0.1.0",
+      "title": "SDTD"
+    },
+    "tools": [
+      {
+        "name": "list_operations",
+        "title": "List SDTD operations",
+        "description": "List the document operations SDTD supports, with their tab, description and configurable option keys.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_presets",
+        "title": "List saved presets",
+        "description": "List the signed-in user's saved SDTD presets, optionally filtered by operation id.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "tool": {
+              "type": "string",
+              "description": "Optional operation id, e.g. apply_layout."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "save_preset",
+        "title": "Save a preset",
+        "description": "Create a saved SDTD preset for the signed-in user: a named set of options for one operation.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Preset name."
+            },
+            "tool": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Operation id from list_operations."
+            },
+            "options": {
+              "type": "object",
+              "additionalProperties": {
+                "type": [
+                  "string",
+                  "boolean",
+                  "number"
+                ]
+              },
+              "description": "Option keys and values for the operation."
+            },
+            "notes": {
+              "type": "string",
+              "description": "Optional free-text notes."
+            }
+          },
+          "required": [
+            "name",
+            "tool"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "delete_preset",
+        "title": "Delete a preset",
+        "description": "Permanently delete one of the signed-in user's saved SDTD presets by id.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Preset id returned by list_presets."
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
